@@ -1,0 +1,888 @@
+/* =========================================================================
+   Oceanix Hospitality - CSS Foundation
+   Theme: Luxury, Minimal, High-End Conversion
+   ========================================================================= */
+
+:root {
+    /* Colors */
+    --clr-navy: #050a11;
+    --clr-charcoal: #11151c;
+    --clr-light: #fdfdfc;
+    --clr-beige: #f4ede3;
+    --clr-gold: #cfa86a;
+    --clr-gold-light: #e6c589;
+    --clr-gold-dim: rgba(207, 168, 106, 0.2);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-alt: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --sp-sm: 1rem;
+    --sp-md: 2rem;
+    --sp-lg: 5rem;
+    --sp-xl: 8rem;
+
+    /* Transitions */
+    --trans-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* =========================================================================
+   Base & Resets
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-navy);
+    color: var(--clr-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-navy);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-gold);
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4,
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: var(--sp-sm);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.85;
+}
+
+.section-subtitle {
+    font-family: var(--font-alt);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Increased for luxury feel */
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem; /* Increased breathing room */
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--trans-smooth);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--sp-xl) 0;
+}
+
+.section-dark {
+    background-color: var(--clr-charcoal);
+    color: var(--clr-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================================
+   Buttons
+   ========================================================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-family: var(--font-alt);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--trans-smooth);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background-color: var(--clr-gold);
+    color: var(--clr-navy);
+    border: 1px solid var(--clr-gold);
+}
+
+.btn-primary:hover {
+    background-color: var(--clr-gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(207, 168, 106, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--clr-light);
+    border: 1px solid var(--clr-gold);
+}
+
+.btn-outline:hover {
+    background: var(--clr-gold);
+    color: var(--clr-navy);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--clr-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* =========================================================================
+   Navbar
+   ========================================================================= */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: var(--trans-smooth);
+}
+
+#navbar.scrolled {
+    background-color: rgba(5, 10, 17, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--clr-light);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    height: 90px;
+    width: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--clr-light); /* Enforces visibility on scroll/dark areas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: var(--trans-smooth);
+}
+
+#navbar:not(.scrolled) .logo-img {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo span {
+    color: var(--clr-gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem; /* Increased font size for better readability and presence */
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--clr-gold);
+    transition: var(--trans-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--clr-light);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    color: var(--clr-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================================================
+   Hero Section
+   ========================================================================= */
+#hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    color: var(--clr-light);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-img, .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+    /* For subtle GSAP zoom later */
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(5, 10, 17, 0.9) 0%, rgba(5, 10, 17, 0.6) 50%, rgba(5, 10, 17, 0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 10vh;
+}
+
+.hero-logo {
+    height: 180px;
+    width: 180px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--clr-light);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 span {
+    color: var(--clr-gold);
+    font-style: italic;
+}
+
+/* =========================================================================
+   About / Split Section
+   ========================================================================= */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-lg);
+    align-items: center;
+}
+
+.about-points {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.point i {
+    color: var(--clr-gold);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.split-image {
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    transform-origin: center;
+    /* Removed redundant border-radius since parent wraps it to allow for scaling */
+}
+
+/* =========================================================================
+   Programs / Services Cards
+   ========================================================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.cards-grid.three-col {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    transition: var(--trans-smooth);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, var(--clr-gold-dim), transparent 60%);
+    opacity: 0;
+    transition: var(--trans-smooth);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(207, 168, 106, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card h3 {
+    font-family: var(--font-alt);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card p {
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================================================
+   Process Timeline
+   ========================================================================= */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 5rem;
+    position: relative;
+    gap: 1rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: var(--clr-gold-dim);
+    z-index: 0;
+}
+
+.timeline-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--clr-charcoal);
+    border: 2px solid var(--clr-gold);
+    color: var(--clr-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 0 5px var(--clr-navy);
+    transition: var(--trans-smooth);
+}
+
+.timeline-step:hover .step-icon {
+    background-color: var(--clr-gold);
+    color: var(--clr-navy);
+    transform: scale(1.1);
+}
+
+.timeline-step h4 {
+    font-family: var(--font-alt);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--clr-gold);
+}
+
+.timeline-step p {
+    font-size: 0.9rem;
+    max-width: 200px;
+}
+
+/* =========================================================================
+   Results Section (Where Students Work)
+   ========================================================================= */
+.results-section {
+    position: relative;
+    padding: var(--sp-xl) 0;
+    background: url('results.png') center/cover fixed;
+    color: var(--clr-light);
+}
+
+.results-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 10, 17, 0.95), rgba(5, 10, 17, 0.8));
+}
+
+.results-content {
+    position: relative;
+    z-index: 1;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-brand {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: var(--trans-smooth);
+    color: var(--clr-gold-light);
+}
+
+.result-brand:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--clr-gold);
+    transform: translateY(-5px);
+}
+
+.result-brand i {
+    font-size: 1.5rem;
+}
+
+.testimonial-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    color: var(--clr-gold-light);
+    position: relative;
+}
+
+.testimonial-text::before {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    opacity: 0.2;
+    font-family: serif;
+}
+
+.testimonial-author {
+    font-family: var(--font-alt);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================================================
+   CTA Section
+   ========================================================================= */
+.cta-section {
+    position: relative;
+    padding: var(--sp-xl) 0;
+    background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000&auto=format&fit=crop') center/cover fixed;
+    color: var(--clr-light);
+}
+
+.cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 10, 17, 0.95), rgba(17, 21, 28, 0.85));
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+/* =========================================================================
+   Footer
+   ========================================================================= */
+.footer {
+    background-color: #03060a;
+    color: var(--clr-light);
+    padding: var(--sp-lg) 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand p {
+    margin-top: 1.5rem;
+    max-width: 350px;
+    font-size: 0.9rem;
+}
+
+.footer h4 {
+    font-family: var(--font-alt);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--clr-gold);
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links ul li a:hover {
+    color: var(--clr-gold);
+}
+
+.footer-contact p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-contact i {
+    color: var(--clr-gold);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a:hover {
+    background: var(--clr-gold);
+    color: var(--clr-navy);
+    border-color: var(--clr-gold);
+}
+
+/* =========================================================================
+   Responsive Design
+   ========================================================================= */
+@media (max-width: 992px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .split-image {
+        order: -1;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    .timeline::before {
+        width: 1px;
+        height: 90%;
+        left: 30px;
+        top: 5%;
+    }
+
+    .timeline-step {
+        flex-direction: row;
+        text-align: left;
+        gap: 1.5rem;
+    }
+
+    .timeline-step .step-icon {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        box-shadow: 0 0 0 5px var(--clr-light);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --sp-xl: 5rem;
+        --sp-lg: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Centering and Alignment for Mobile */
+    .hero-content {
+        text-align: center;
+        padding-top: 15vh;
+    }
+
+    .hero-logo {
+        margin: 0 auto 2rem;
+    }
+
+    .split-text {
+        text-align: center;
+    }
+
+    .about-points {
+        align-items: center;
+    }
+    
+    .point {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .point i {
+        margin-top: 0;
+    }
+
+    .card {
+        text-align: center;
+    }
+
+    .timeline-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .timeline-step .step-icon {
+        margin: 0 auto 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin: 1.5rem auto 0;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    #navbar .btn-outline {
+        display: none;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+}
+
+/* =========================================================================
+   Lenis Smooth Scroll Utilities
+   ========================================================================= */
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
