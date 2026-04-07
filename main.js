@@ -72,13 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Hero Section Animations ---
     const heroTl = gsap.timeline();
 
-    // Subtle zoom on the background image or video
-    heroTl.to(".hero-img, .hero-video", {
-        scale: 1,
-        duration: 5,
-        ease: "power2.out"
-    }, 0);
-
     // Reveal main headline
     heroTl.fromTo(".gsap-reveal",
         { y: 60, opacity: 0 },
@@ -177,18 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mm.add("(min-width: 769px)", () => {
 
-        // Hero Background Parallax
-        gsap.to(".hero-bg", {
-            yPercent: 35,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#hero",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-
         // Intro Image Parallax
         const introImage = document.querySelector(".split-image img");
         if (introImage) {
@@ -238,6 +219,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
+    });
+
+    // Recalculate ScrollTrigger positions after all assets (images/video) finish loading
+    window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
     });
 
 });
