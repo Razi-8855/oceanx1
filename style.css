@@ -196,6 +196,10 @@ ul {
     margin-top: 2rem;
 }
 
+.mobile-cta-btn {
+    display: none; /* Hidden by default on desktop */
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -822,7 +826,43 @@ ul {
     }
 
     .hero-btns {
-        display: none;
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .mobile-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 85%;
+        padding: 0.8rem 1.5rem;
+        text-align: center;
+        background-color: var(--clr-gold);
+        color: var(--clr-navy);
+        border: 1px solid var(--clr-gold);
+        border-radius: 2px;
+        font-family: var(--font-alt);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0.5rem;
+        transition: var(--trans-smooth);
+    }
+
+    .mobile-cta-btn.secondary {
+        background: transparent;
+        color: var(--clr-light);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .mobile-cta-btn.outline {
+        background: transparent;
+        color: var(--clr-gold);
+        border: 1px solid var(--clr-gold);
     }
 
     .split-text {
