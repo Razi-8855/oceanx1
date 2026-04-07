@@ -821,8 +821,8 @@ ul {
         padding-top: 15vh;
     }
 
-    .hero-logo {
-        margin: 0 auto 2rem;
+    .hero-btns {
+        display: none;
     }
 
     .split-text {
@@ -889,10 +889,6 @@ ul {
 
     #navbar .btn-outline {
         display: none;
-    }
-
-    .hero-btns {
-        justify-content: center;
     }
 }
 
