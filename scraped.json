@@ -1,0 +1,111 @@
+[
+  {
+    "name": "ddljobcatagoryapply",
+    "options": [
+      "Select Department",
+      "Security",
+      "Food Production",
+      "F & B Service",
+      "Housekeeping",
+      "Accounts/Finance",
+      "Front Office",
+      "Kitchen Management",
+      "Photography",
+      "Medical",
+      "Spa/Salon",
+      "Sales"
+    ]
+  },
+  {
+    "name": "ddlAge",
+    "options": [
+      "Select"
+    ]
+  },
+  {
+    "name": "ddlLocation",
+    "options": [
+      "Select location",
+      "Mumbai",
+      "Goa",
+      "Chennai",
+      "Delhi",
+      "Kolkata"
+    ]
+  },
+  {
+    "name": "txtFt",
+    "options": [
+      "Feet",
+      "2 feet",
+      "3 feet",
+      "4 feet",
+      "5 feet",
+      "6 feet",
+      "7 feet",
+      "8 feet"
+    ]
+  },
+  {
+    "name": "txtInch",
+    "options": [
+      "Inches",
+      "1 inch",
+      "2 inch",
+      "3 inch",
+      "4 inch",
+      "5 inch",
+      "6 inch",
+      "7 inch",
+      "8 inch",
+      "9 inch",
+      "10 inch",
+      "11 inch",
+      "12 inch"
+    ]
+  },
+  {
+    "name": "type_weight",
+    "options": [
+      "Select Type",
+      "Kgs",
+      "LBS"
+    ]
+  },
+  {
+    "name": "ddljobcatagory",
+    "options": [
+      "Select Department",
+      "Security",
+      "Food Production",
+      "F & B Service",
+      "Housekeeping",
+      "Accounts/Finance",
+      "Front Office",
+      "Kitchen Management",
+      "Photography",
+      "Medical",
+      "Spa/Salon",
+      "Sales"
+    ]
+  },
+  {
+    "name": "ddlJobPosition",
+    "options": [
+      "Select"
+    ]
+  },
+  {
+    "name": "DDlAdvertisement",
+    "options": [
+      "Select",
+      "Newspaper",
+      "Google",
+      "Facebook",
+      "Ad on this Website",
+      "Naukri.com",
+      "Friend's Recommendation",
+      "Cruise Line Contact"
+    ]
+  }
+]

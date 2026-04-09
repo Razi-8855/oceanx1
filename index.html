@@ -12,7 +12,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
                 <a href="#programs">Programs</a>
                 <a href="#training">Training</a>
                 <a href="#process">Journey</a>
-                <a href="https://wa.me/919446481424" class="mobile-cta-btn" target="_blank">Apply Now</a>
+                <a href="javascript:void(0)" class="mobile-cta-btn open-apply-modal">Apply Now</a>
                 <a href="https://wa.me/919446481424" class="mobile-cta-btn secondary" target="_blank">Contact Now</a>
                 <a href="ADMISSION FORM OCEANIX.pdf" class="mobile-cta-btn outline" target="_blank">Admission Form</a>
             </div>
@@ -56,7 +56,7 @@
             <h1 class="gsap-reveal">Start Your International Career on <br><span>Luxury Cruise Ship and Hospitality Industry</span> right now!!</h1>
             <p class="gsap-reveal-delay">Training &bull; Guidance to Placement &bull; Global Opportunities</p>
             <div class="hero-btns gsap-reveal-delay-2">
-                <a href="https://wa.me/919446481424" class="btn btn-primary" target="_blank">Apply Now</a>
+                <a href="javascript:void(0)" class="btn btn-primary open-apply-modal">Apply Now</a>
                 <a href="https://wa.me/919446481424" class="btn btn-secondary" target="_blank">Contact Now</a>
             </div>
         </div>
@@ -189,7 +189,7 @@
             <h2>Ready to Start?</h2>
             <p>Take the first step toward your global hospitality and cruise career.</p>
             <div class="hero-btns justify-center" style="margin-top: 2rem;">
-                <a href="https://wa.me/919446481424" class="btn btn-primary" target="_blank">Apply Now</a>
+                <a href="javascript:void(0)" class="btn btn-primary open-apply-modal">Apply Now</a>
                 <a href="https://wa.me/919446481424" class="btn btn-secondary" target="_blank">Contact Now</a>
                 <a href="ADMISSION FORM OCEANIX.pdf" class="btn btn-outline" target="_blank">Download Now</a>
             </div>
@@ -235,6 +235,192 @@
         </div>
     </footer>
 
+    
+    <!-- Premium Application Modal -->
+    <div id="applyModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" data-lenis-prevent>
+            <button class="modal-close" id="closeModalBtn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="modal-logo">
+                <h2>Begin Your Journey</h2>
+                <p>Complete the form below to initiate your application process.</p>
+            </div>
+            <form id="applyForm" class="premium-form">
+                <div class="form-group">
+                    <input type="text" id="candName" name="name" placeholder=" " required>
+                    <label for="candName">Full Name</label>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="email" id="candEmail" name="email" placeholder=" " required>
+                        <label for="candEmail">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="candPhone" name="phone" placeholder=" " required pattern="[0-9\\+\\-\\s]+">
+                        <label for="candPhone">Phone Number</label>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="date" id="candDob" name="dob" required>
+                        <label for="candDob" class="active-label">Date of Birth</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="candAge" name="age" required>
+                            <option value="" disabled selected></option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                            <option value="60">60</option>
+                        </select>
+                        <label for="candAge">Age</label>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <select id="candGender" name="gender" required>
+                            <option value="" disabled selected></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="candGender">Gender</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="candLocation" name="location" required>
+                            <option value="" disabled selected></option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                        </select>
+                        <label for="candLocation">Location / State</label>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <select id="candDept" name="department" required>
+                            <option value="" disabled selected></option>
+                            <option value="Security">Security</option>
+                            <option value="Food Production">Food Production</option>
+                            <option value="F & B Service">F & B Service</option>
+                            <option value="Housekeeping">Housekeeping</option>
+                            <option value="Accounts/Finance">Accounts/Finance</option>
+                            <option value="Front Office">Front Office</option>
+                            <option value="Kitchen Management">Kitchen Management</option>
+                            <option value="Photography">Photography</option>
+                            <option value="Medical">Medical</option>
+                            <option value="Spa/Salon">Spa/Salon</option>
+                            <option value="Sales">Sales</option>
+                        </select>
+                        <label for="candDept">Department</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="candPosition" name="position" required>
+                            <option value="" disabled selected>Select Dept First</option>
+                        </select>
+                        <label for="candPosition" class="active-label">Position</label>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <select id="candExperience" name="experience" required>
+                            <option value="" disabled selected></option>
+                            <option value="Fresher">Fresher</option>
+                            <option value="1-2 Years">1-2 Years</option>
+                            <option value="3+ Years">3+ Years</option>
+                        </select>
+                        <label for="candExperience">Experience Level</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="candCdc" name="cdc" placeholder=" ">
+                        <label for="candCdc">CDC Status (Optional)</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="candMessage" name="message" rows="2" placeholder=" "></textarea>
+                    <label for="candMessage">Message (Optional)</label>
+                </div>
+                <button type="submit" id="submitBtn" class="submit-btn btn-primary">
+                    <span id="btnText">Submit via WhatsApp</span>
+                    <i id="btnIcon" class="fab fa-whatsapp"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -243,6 +429,6 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="main.js"></script>
+    <script src="main.js?v=4"></script>
 </body>
 </html>
