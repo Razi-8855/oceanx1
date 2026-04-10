@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Lenis Smooth Scroll Setup ---
     const lenis = new Lenis({
-        duration: 1.0, // Reduced from 1.5 to make it feel less heavy
+        duration: 0.8, // Reduced to optimize performance
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smooth: true,
         direction: 'vertical',
@@ -29,42 +29,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Navbar Scroll Effect ---
     const navbar = document.getElementById("navbar");
+    let ticking = false;
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
-    });
+    }, { passive: true });
 
     // --- Mobile Menu Toggle ---
     const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
     const navLinks = document.querySelector(".nav-links");
 
     if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
+        let isMenuOpen = false;
+
+        const toggleMenu = () => {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle("active", isMenuOpen);
+            mobileMenuBtn.classList.toggle("active", isMenuOpen);
+            
             const icon = mobileMenuBtn.querySelector("i");
-            if (icon.classList.contains("fa-bars")) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-times");
+            if (isMenuOpen) {
+                icon.className = "fas fa-times";
                 lenis.stop();
+                // Add a small delay then lock body to be safe
+                document.body.style.overflow = 'hidden';
             } else {
-                icon.classList.remove("fa-times");
-                icon.classList.add("fa-bars");
+                icon.className = "fas fa-bars";
                 lenis.start();
+                document.body.style.overflow = '';
             }
-        });
+        };
+
+        mobileMenuBtn.addEventListener("click", toggleMenu);
 
         // Close menu when a link is clicked
         const links = navLinks.querySelectorAll("a");
         links.forEach(link => {
             link.addEventListener("click", () => {
-                navLinks.classList.remove("active");
-                const icon = mobileMenuBtn.querySelector("i");
-                icon.classList.remove("fa-times");
-                icon.classList.add("fa-bars");
-                lenis.start();
+                if (isMenuOpen) toggleMenu();
             });
         });
     }
@@ -75,22 +86,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reveal main headline
     heroTl.fromTo(".gsap-reveal",
         { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" },
-        0.5
+        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
+        0.2
     );
 
     // Reveal subtext
     heroTl.fromTo(".gsap-reveal-delay",
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.5, ease: "power3.out" },
-        0.9
+        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
+        0.4
     );
 
     // Reveal buttons
     heroTl.fromTo(".gsap-reveal-delay-2",
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" },
-        1.2
+        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", clearProps: "willChange" },
+        0.6
     );
 
     // --- ScrollTrigger Cinematic Reveals (Runs on all devices) ---
@@ -101,8 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 y: 0,
                 opacity: 1,
-                duration: 1.2,
+                duration: 0.6,
                 ease: "power3.out",
+                clearProps: "willChange",
                 scrollTrigger: {
                     trigger: el,
                     start: "top 85%",
@@ -118,9 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             y: 0,
             opacity: 1,
-            duration: 1.0,
-            stagger: 0.15,
+            duration: 0.6,
+            stagger: 0.1,
             ease: "power3.out",
+            clearProps: "willChange",
             scrollTrigger: {
                 trigger: ".cards-grid",
                 start: "top 80%",
@@ -136,9 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 0,
             opacity: 1,
             scale: 1,
-            duration: 1.2,
-            stagger: 0.25,
+            duration: 0.6,
+            stagger: 0.1,
             ease: "power3.out",
+            clearProps: "willChange",
             scrollTrigger: {
                 trigger: ".timeline",
                 start: "top 75%"
@@ -153,9 +167,10 @@ document.addEventListener("DOMContentLoaded", () => {
             scale: 1,
             opacity: 1,
             y: 0,
-            duration: 1.2,
-            stagger: 0.15,
+            duration: 0.6,
+            stagger: 0.1,
             ease: "power3.out",
+            clearProps: "willChange",
             scrollTrigger: {
                 trigger: ".results-grid",
                 start: "top 85%"

@@ -8,6 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,7 +22,7 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <div class="logo-img-wrapper">
-                    <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="logo-img">
+                    <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="logo-img" width="150" height="150" fetchpriority="high">
                 </div>
                 <div class="logo-text-group">
                     <span class="logo-text-main">OCEANIX</span>
@@ -48,7 +49,7 @@
     <header id="hero">
         <div class="hero-bg">
             <div class="overlay"></div>
-            <video class="hero-video" autoplay muted playsinline loop preload="auto">
+            <video class="hero-video" autoplay muted playsinline loop preload="auto" poster="hero-bg.png">
                 <source src="Video_Ready_Audio_Muted (1).mp4" type="video/mp4">
             </video>
         </div>
@@ -66,7 +67,7 @@
     <section id="about" class="section">
         <div class="container split-layout">
             <div class="split-image gsap-reveal">
-                <img src="student.png" alt="Successful Oceanix Student placed in international hospitality" style="border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                <img src="student.png" alt="Successful Oceanix Student placed in international hospitality" loading="lazy" style="border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
             </div>
             <div class="split-text gsap-reveal">
                 <p class="section-subtitle">Student Success</p>
@@ -203,7 +204,7 @@
                 <div class="footer-brand">
                     <div style="display: inline-flex; flex-direction: column; align-items: center;">
                         <div class="footer-logo-wrapper">
-                            <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="footer-logo">
+                            <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="footer-logo" loading="lazy" width="190" height="190">
                         </div>
                         <div class="logo-text-group" style="margin-bottom: 1rem;">
                             <span class="logo-text-main" style="font-size: 1.8rem;">OCEANIX</span>
@@ -242,7 +243,7 @@
         <div class="modal-content" data-lenis-prevent>
             <button class="modal-close" id="closeModalBtn" aria-label="Close modal"><i class="fas fa-times"></i></button>
             <div class="modal-header">
-                <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="modal-logo">
+                <img src="Oceanix_Logo_4K_Final.png" alt="Oceanix Logo" class="modal-logo" width="70" height="70">
                 <h2>Begin Your Journey</h2>
                 <p>Complete the form below to initiate your application process.</p>
             </div>
