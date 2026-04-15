@@ -1072,17 +1072,59 @@ ul {
         display: none;
     }
 
+    /* Robust Button Stacking */
+    #hero .hero-content .hero-btns,
+    #cta .cta-content .hero-btns {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
+    }
+
+    #hero .hero-content .hero-btns .btn,
+    #cta .cta-content .hero-btns .btn {
+        width: 90% !important;
+        max-width: 320px !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* Robust Point Centering */
+    .about-points .point {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem;
+    }
+
+    .about-points .point p {
+        text-align: center !important;
+        max-width: 280px;
+    }
+
+    .about-points .point i {
+        margin: 0 0 0.5rem 0 !important;
+        font-size: 1.8rem !important;
+    }
+
     .testimonial-text {
         font-size: 1.15rem;
-        padding: 3rem 1rem 0;
-        line-height: 1.4;
+        padding: 3.5rem 1rem 0.5rem;
+        line-height: 1.5;
     }
 
     .testimonial-text::before {
         left: 50%;
         transform: translateX(-50%);
-        top: 0;
-        font-size: 2.5rem;
+        top: -15px; /* Moved up as requested */
+        font-size: 2.8rem;
     }
 }
 
