@@ -2,7 +2,6 @@ const fs = require('fs');
 
 const ages = [];
 for(let i=18; i<=60; i++) ages.push(`<option value="${i}">${i}</option>`);
-
 const states = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
     "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", 
