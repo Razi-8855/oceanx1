@@ -1,0 +1,17 @@
+# Oceanix Hospitality - Robots.txt
+# https://oceanixcareers.com
+
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /builder.js
+Disallow: /builder2.js
+Disallow: /extract.js
+Disallow: /scraped.json
+
+# Sitemap
+Sitemap: https://oceanixcareers.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
