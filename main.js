@@ -288,7 +288,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "Kitchen Management": ["Kitchen Steward", "Provision Master", "Storekeeper"],
             "Photography": ["Photographer", "Photo Gallery Manager", "Videographer"],
             "Medical": ["Doctor", "Nurse", "Paramedic"],
-            "Spa/Salon": ["Massage Therapist", "Hair Stylist", "Nail Technician", "Fitness Instructor"],
+            "Spa/Salon": ["Massage Therapist", "Hair Stylist", "Nail Technician"],
+            "Fitness": ["Fitness Instructor", "Personal Trainer", "Gym Manager"],
             "Sales": ["Retail Assistant", "Duty Free Manager", "Fine Jewelry Consultant"]
         };
 

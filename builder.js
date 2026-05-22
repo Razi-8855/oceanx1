@@ -68,6 +68,7 @@ const newHTMLBlock = `                <div class="form-grid">
                             <option value="Photography">Photography</option>
                             <option value="Medical">Medical</option>
                             <option value="Spa/Salon">Spa/Salon</option>
+                            <option value="Fitness">Fitness</option>
                             <option value="Sales">Sales</option>
                         </select>
                         <label for="candDept">Department</label>
