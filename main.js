@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const positionsMap = {
             "Security": ["Security Guard", "Security Officer", "Chief Security"],
-            "Food Production": ["Executive Chef", "Sous Chef", "Pastry Chef", "Commis", "Baker"],
+            "Food Production": ["Executive Chef", "Sous Chef", "Pastry Chef", "Commis", "Baker", "Galley Steward"],
             "F & B Service": ["Restaurant Manager", "Waiter/Waitress", "Bartender", "Sommelier", "Buffet Steward"],
             "Housekeeping": ["Cabin Steward", "Cleaner", "Laundry Operator", "Florist", "Pool Attendant"],
             "Accounts/Finance": ["Purser", "Payroll Manager", "Accountant"],
