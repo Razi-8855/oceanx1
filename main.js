@@ -256,6 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const openModal = () => {
         if(modal) modal.classList.add("active");
         if(lenis) lenis.stop(); // Disable background scrolling
+        if(typeof updatePositions === 'function') updatePositions();
     };
 
     const closeModal = () => {
@@ -290,23 +291,33 @@ document.addEventListener("DOMContentLoaded", () => {
             "Medical": ["Doctor", "Nurse", "Paramedic"],
             "Spa/Salon": ["Massage Therapist", "Hair Stylist", "Nail Technician", "Tattoo Artist"],
             "Fitness": ["Fitness Instructor", "Personal Trainer", "Gym Manager"],
-            "Sales": ["Retail Assistant", "Duty Free Manager", "Fine Jewelry Consultant"]
+            "Sales": ["Retail Assistant", "Duty Free Manager", "Fine Jewelry Consultant"],
+            "Yacht": ["Deckhand", "Bosun", "Chief Steward/Stewardess", "Yacht Steward/Stewardess", "House Keeping", "Family Services", "Yacht Chef", "Yacht Captain", "Yacht Engineer"]
+        };
+
+        const updatePositions = () => {
+            if (!deptSelect || !posSelect) return;
+            const selectedDept = deptSelect.value;
+            const positions = positionsMap[selectedDept] || [];
+            
+            const prevVal = posSelect.value;
+            posSelect.innerHTML = '<option value="" disabled selected>Select Position</option>';
+            
+            positions.forEach(pos => {
+                const opt = document.createElement("option");
+                opt.value = pos;
+                opt.textContent = pos;
+                if (pos === prevVal) opt.selected = true;
+                posSelect.appendChild(opt);
+            });
         };
 
         if (deptSelect && posSelect) {
-            deptSelect.addEventListener("change", () => {
-                const selectedDept = deptSelect.value;
-                const positions = positionsMap[selectedDept] || [];
-                
-                posSelect.innerHTML = '<option value="" disabled selected>Select Position</option>';
-                
-                positions.forEach(pos => {
-                    const opt = document.createElement("option");
-                    opt.value = pos;
-                    opt.textContent = pos;
-                    posSelect.appendChild(opt);
-                });
-            });
+            deptSelect.addEventListener("change", updatePositions);
+            // Run on load in case browser autofilled or remembered Department
+            if (deptSelect.value) {
+                updatePositions();
+            }
         }
 
         // Form Submission Logic
