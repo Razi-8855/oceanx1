@@ -88,6 +88,7 @@ ${stateOptions.join('\n')}
                             <option value="Fitness">Fitness</option>
                             <option value="Sales">Sales</option>
                             <option value="Yacht">Yacht</option>
+                            <option value="Entertainment Management">Entertainment Management</option>
                         </select>
                         <label for="candDept">Department</label>
                     </div>

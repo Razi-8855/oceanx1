@@ -292,7 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Spa/Salon": ["Massage Therapist", "Hair Stylist", "Nail Technician", "Tattoo Artist"],
             "Fitness": ["Fitness Instructor", "Personal Trainer", "Gym Manager"],
             "Sales": ["Retail Assistant", "Duty Free Manager", "Fine Jewelry Consultant"],
-            "Yacht": ["Deckhand", "Bosun", "Chief Steward/Stewardess", "Yacht Steward/Stewardess", "House Keeping", "Family Services", "Yacht Chef", "Yacht Captain", "Yacht Engineer"]
+            "Yacht": ["Deckhand", "Bosun", "Chief Steward/Stewardess", "Yacht Steward/Stewardess", "House Keeping", "Family Services", "Yacht Chef", "Yacht Captain", "Yacht Engineer"],
+            "Entertainment Management": ["Dance & Performance", "Music & Singing", "Stage & Special Performances", "Entertainment & Guest Activities", "Technical & Production"],
+            "Entertainment  management": ["Dance & Performance", "Music & Singing", "Stage & Special Performances", "Entertainment & Guest Activities", "Technical & Production"]
         };
 
         const updatePositions = () => {
